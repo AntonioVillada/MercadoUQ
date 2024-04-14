@@ -4,7 +4,10 @@ import mercado.uq.facturacion.GestorFacturas;
 import mercado.uq.model.Cliente;
 import mercado.uq.model.Factura;
 import mercado.uq.model.GestorClientes;
+import mercado.uq.model.Producto;
 import mercado.uq.utils.GeneradorReportes;
+import mercado.uq.utils.GestorProductos;
+
 import java.util.List;
 import java.util.Scanner;
 
@@ -16,24 +19,42 @@ public class Main {
         // to see how IntelliJ IDEA suggests fixing it.
         System.out.printf("Hello and welcome! \n");
         Scanner scanner = new Scanner(System.in);
-        GestorClientes gestorClientes = new GestorClientes();
 
-        //Cliente cliente = solicitarDatosCliente(scanner);
-        //gestorClientes.registrarCliente(cliente);
-        //gestorClientes.guardarClientesEnCSV("C:\\Proyecto\\txt\\clientes.txt");
+        GestorProductos gestor = new GestorProductos();
+        //GestorClientes gestorClientes = new GestorClientes();
+        //GestorFacturas gestorFacturas = new GestorFacturas();
+
+        List<Producto> productos = gestor.cargarProductosCSV
+                ("C:\\Proyecto\\txt\\productos.txt");
+        for (Producto producto : productos) {
+            System.out.println("producto: " + producto.getNombre());
+            System.out.println("peso en kg: "+producto.getPeso());
+            System.out.println("valor: "+producto.getValor());
+            System.out.println();
+        }
+
+        /*
+
+
+        Cliente cliente = solicitarDatosCliente(scanner);
+        gestorClientes.registrarCliente(cliente);
+        gestorClientes.guardarClientesEnCSV("C:\\Proyecto\\txt\\clientes.txt");
+
 
         String rutaFacturas = "C:\\Proyecto\\txt\\facturas.txt";
-        GestorFacturas gestorFacturas = new GestorFacturas();
         List<Factura> facturas = gestorFacturas.cargarFacturasCSV(rutaFacturas);
         System.out.println("la cantidad de facturas cargadas son:  " + facturas.size());
 
-        for (Factura factura : facturas) {
+
+
+       for (Factura factura : facturas) {
             System.out.println("Número de factura: " + factura.getNumeroDeFactura());
             System.out.println("fecha De Compra: " + factura.getFechaDeCompra());
             System.out.println("Cliente: " + factura.getCliente());
             System.out.println("valor Total: " + factura.getValorTotal());
             System.out.println();
         }
+
         // GeneradorReportes generadorReportes = new GeneradorReportes();
         // generadorReportes.generarReporteClientesNoRegistrados(clientesCargados, clientesRegistrados);
 
@@ -51,4 +72,6 @@ public class Main {
         return new Cliente(nombre, apellido, correo, telefono);
     }
 
-}
+        */
+
+    }}
