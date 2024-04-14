@@ -7,5 +7,4 @@ module mercado.uq {
     opens mercado.uq to javafx.fxml;
     exports mercado.uq;
 
-
 }
