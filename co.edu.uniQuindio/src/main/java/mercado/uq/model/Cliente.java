@@ -5,11 +5,14 @@ public class Cliente {
     private String apellido;
     private String correo;
     private String telefono;
-    public Cliente(String nombre, String apellido, String correo, String telefono) {
+    private boolean registrado;
+
+    public Cliente(String nombre, String apellido, String correo, String telefono, boolean registrado) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.correo = correo;
         this.telefono = telefono;
+        this.registrado = registrado;
     }
 
     public String getNombre() {
@@ -44,6 +47,12 @@ public class Cliente {
         this.telefono = telefono;
     }
 
+    public boolean getRegistrado() {
+        return registrado;
+    }
+    public void setRegistrado(boolean registrado) {
+        this.registrado = registrado;
+    }
     @Override
     public String toString() {
         return "Cliente{" +

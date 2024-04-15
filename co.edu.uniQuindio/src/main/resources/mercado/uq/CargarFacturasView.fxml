@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="499.0" prefWidth="1131.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mercado.uq.controller.GestorFacturasController">
+    <children>
+        <HBox prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <VBox prefHeight="100.0" prefWidth="204.0">
+                     <children>
+                        <VBox prefHeight="67.0" prefWidth="200.0" />
+                        <Button mnemonicParsing="false" onAction="#onCargarFacturasButtonClick" text="Cargar Facturas" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children></HBox>
+        <TableView fx:id="listaFacturas" prefHeight="398.0" prefWidth="833.0">
+            <columns>
+                <TableColumn fx:id="numeroFacturaColumna" prefWidth="92.0" text="Número" />
+                <TableColumn fx:id="valorTotalColumna" minWidth="3.0" prefWidth="108.0" text="Valor total" />
+                <TableColumn fx:id="fechaEmisionColumna" prefWidth="130.0" text="Fecha emisión" />
+                <TableColumn fx:id="productosColumna" prefWidth="97.0" text="Productos" />
+                <TableColumn fx:id="clienteColumna" prefWidth="69.0" text="Cliente" />
+                <TableColumn fx:id="paisEntregaColumna" prefWidth="142.0" text="País de entrega" />
+                <TableColumn fx:id="categoriasProductosColumna" prefWidth="94.0" text="Categoría" />
+                <TableColumn fx:id="descuentoAplicadoColum" prefWidth="121.0" text="Descuento" />
+                <TableColumn fx:id="prioridadColumna" prefWidth="108.0" text="Prioridad" />
+                <TableColumn fx:id="fechaCompraColumna" prefWidth="156.0" text="Fecha de compra" />
+            </columns>
+        </TableView>
+    </children>
+</VBox>

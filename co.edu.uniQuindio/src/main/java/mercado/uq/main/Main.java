@@ -1,22 +1,27 @@
 package mercado.uq.main;
-
-import mercado.uq.facturacion.GestorFacturas;
-import mercado.uq.model.Cliente;
-import mercado.uq.model.Factura;
-import mercado.uq.model.GestorClientes;
-import mercado.uq.model.Producto;
-import mercado.uq.utils.GeneradorReportes;
-import mercado.uq.utils.GestorProductos;
-
-import java.util.List;
-import java.util.Scanner;
-
+import javafx.application.Application;
+import mercado.uq.mainLight.ClienteMainLight;
+import mercado.uq.HelloApplication;
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+
+
 public class Main {
     public static void main(String[] args) {
         //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
         // to see how IntelliJ IDEA suggests fixing it.
+
+
+
+        launchApp(args);
+
+
+
+
+
+
+
+         /*
         System.out.printf("Hello and welcome! \n");
         Scanner scanner = new Scanner(System.in);
 
@@ -33,7 +38,7 @@ public class Main {
             System.out.println();
         }
 
-        /*
+
 
 
         Cliente cliente = solicitarDatosCliente(scanner);
@@ -71,7 +76,15 @@ public class Main {
         String telefono = scanner.nextLine();
         return new Cliente(nombre, apellido, correo, telefono);
     }
+    }
+*/
+    }
+    public static void launchApp(String[] args) {
+        new Thread(() -> {
+            HelloApplication.launch(HelloApplication.class, args);
+        }).start();
+    }
 
-        */
 
-    }}
+
+}

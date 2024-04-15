@@ -21,6 +21,7 @@ public class GestorClientes {
         System.out.println("Apellido: " + cliente.getApellido());
         System.out.println("Correo: " + cliente.getCorreo());
         System.out.println("Teléfono: " + cliente.getTelefono());
+
     }
 
     // Método para guardar los clientes en un archivo de CSV
@@ -28,7 +29,6 @@ public class GestorClientes {
     public void guardarClientesEnCSV(String rutaArchivo) {
 
         try (PrintWriter printWriter = new PrintWriter(new FileWriter(rutaArchivo, true))) {
-            // Escribir los datos de cada cliente
             for (Cliente cliente : listaClientes) {
                 printWriter.println(cliente.getNombre() + "," + cliente.getApellido() + "," + cliente.getCorreo() + "," + cliente.getTelefono());
             }
