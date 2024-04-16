@@ -1,8 +1,11 @@
 package mercado.uq.model;
 
+import java.util.List;
+
 public class Producto {
 
-    private String categoria;
+    private int idProducto;
+    private Categoria categoria;
     private double valor;
     private int existencias;
     private double peso;
@@ -10,8 +13,8 @@ public class Producto {
     private String nombre;
     private String descripcionProducto;
 
-    // Constructor
-    public Producto(String categoria, double valor, int existencias, double peso, String tamaño, String nombre, String descripcionProducto) {
+    public Producto(int idProducto, Categoria categoria, double valor, int existencias, double peso, String tamaño, String nombre, String descripcionProducto) {
+        this.idProducto = idProducto;
         this.categoria = categoria;
         this.valor = valor;
         this.existencias = existencias;
@@ -25,12 +28,11 @@ public class Producto {
 
     }
 
-    // geter y seter
-    public String getCategoria() {
+    public Categoria getCategoria() {
         return categoria;
     }
 
-    public void setCategoria(String categoria) {
+    public void setCategoria(Categoria categoria) {
         this.categoria = categoria;
     }
 
@@ -42,14 +44,6 @@ public class Producto {
         this.valor = valor;
     }
 
-    public int getExistencias() {
-        return existencias;
-    }
-
-    public void setExistencias(int existencias) {
-        this.existencias = existencias;
-    }
-
     public double getPeso() {
         return peso;
     }
@@ -58,12 +52,12 @@ public class Producto {
         this.peso = peso;
     }
 
-    public String getTamaño() {
-        return tamaño;
+    public int getExistencias() {
+        return existencias;
     }
 
-    public void setTamaño(String tamaño) {
-        this.tamaño = tamaño;
+    public void setExistencias(int existencias) {
+        this.existencias = existencias;
     }
 
     public String getNombre() {
@@ -74,11 +68,38 @@ public class Producto {
         this.nombre = nombre;
     }
 
+    public String getTamaño() {
+        return tamaño;
+    }
+
+    public void setTamaño(String tamaño) {
+        this.tamaño = tamaño;
+    }
+
     public String getDescripcionProducto() {
         return descripcionProducto;
     }
 
     public void setDescripcionProducto(String descripcionProducto) {
         this.descripcionProducto = descripcionProducto;
+    }
+
+    public int getIdProducto() {
+        return idProducto;
+    }
+
+    public void setIdProducto(int idProducto) {
+        this.idProducto = idProducto;
+    }
+
+    public static Producto buscarProductoPorId(int id) {
+        // Supongamos que tienes una lista estática de productos en alguna clase de gestión
+        List<Producto> productos = GestorProducto.getProductos(); // Obtenemos la lista de productos
+        for (Producto producto : productos) {
+            if (producto.getIdProducto() == id) {
+                return producto;
+            }
+        }
+        return null; // Si no se encuentra el producto con el ID especificado
     }
 }

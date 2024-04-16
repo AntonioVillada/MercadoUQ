@@ -4,8 +4,10 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.List;
 
 public class GestorClientes {
+
     private ArrayList<Cliente> listaClientes;
 
     // Constructor
@@ -36,5 +38,10 @@ public class GestorClientes {
             System.out.println("Error al guardar clientes en el archivo CSV.");
             e.printStackTrace();
         }
+    }
+
+    // Método para obtener la lista de clientes
+    public List<Cliente> getClientes() {
+        return listaClientes;
     }
 }

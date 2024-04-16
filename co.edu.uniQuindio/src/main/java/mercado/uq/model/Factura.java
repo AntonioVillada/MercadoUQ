@@ -4,28 +4,30 @@ import java.util.Date;
 import java.util.List;
 
 public class Factura {
+
     private int numeroDeFactura;
-    private double valorTotal;
-    private Date fechaDeEmision;
-    private List<Producto> productos;
+    private Categoria categoria;
+    private Producto productos;
     private Cliente cliente;
     private String paisDeEntrega;
-    private String categoriasDeProductos;
     private boolean descuentoAplicado;
-    private int prioridad;
+    private double valorTotal;
+    private Date fechaDeEmision;
     private Date fechaDeCompra;
 
-    public Factura() {
+    public Factura(int numeroDeFactura, Categoria categoria, Producto productos, Cliente cliente, String paisDeEntrega, boolean descuentoAplicado, double valorTotal, Date fechaDeEmision, Date fechaDeCompra) {
         this.numeroDeFactura = numeroDeFactura;
-        this.valorTotal = valorTotal;
-        this.fechaDeEmision = fechaDeEmision;
+        this.categoria = categoria;
         this.productos = productos;
         this.cliente = cliente;
         this.paisDeEntrega = paisDeEntrega;
-        this.categoriasDeProductos = categoriasDeProductos;
         this.descuentoAplicado = descuentoAplicado;
-        this.prioridad = prioridad;
+        this.valorTotal = valorTotal;
+        this.fechaDeEmision = fechaDeEmision;
         this.fechaDeCompra = fechaDeCompra;
+    }
+
+    public Factura() {
     }
 
 
@@ -37,27 +39,19 @@ public class Factura {
         this.numeroDeFactura = numeroDeFactura;
     }
 
-    public double getValorTotal() {
-        return valorTotal;
+    public Categoria getCategoria() {
+        return categoria;
     }
 
-    public void setValorTotal(double valorTotal) {
-        this.valorTotal = valorTotal;
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
     }
 
-    public Date getFechaDeEmision() {
-        return fechaDeEmision;
-    }
-
-    public void setFechaDeEmision(Date fechaDeEmision) {
-        this.fechaDeEmision = fechaDeEmision;
-    }
-
-    public List<Producto> getProductos() {
+    public Producto getProductos() {
         return productos;
     }
 
-    public void setProductos(List<Producto> productos) {
+    public void setProductos(Producto productos) {
         this.productos = productos;
     }
 
@@ -77,14 +71,6 @@ public class Factura {
         this.paisDeEntrega = paisDeEntrega;
     }
 
-    public String getCategoriasDeProductos() {
-        return categoriasDeProductos;
-    }
-
-    public void setCategoriasDeProductos(String categoriasDeProductos) {
-        this.categoriasDeProductos = categoriasDeProductos;
-    }
-
     public boolean isDescuentoAplicado() {
         return descuentoAplicado;
     }
@@ -93,12 +79,20 @@ public class Factura {
         this.descuentoAplicado = descuentoAplicado;
     }
 
-    public int getPrioridad() {
-        return prioridad;
+    public double getValorTotal() {
+        return valorTotal;
     }
 
-    public void setPrioridad(int prioridad) {
-        this.prioridad = prioridad;
+    public void setValorTotal(double valorTotal) {
+        this.valorTotal = valorTotal;
+    }
+
+    public Date getFechaDeEmision() {
+        return fechaDeEmision;
+    }
+
+    public void setFechaDeEmision(Date fechaDeEmision) {
+        this.fechaDeEmision = fechaDeEmision;
     }
 
     public Date getFechaDeCompra() {

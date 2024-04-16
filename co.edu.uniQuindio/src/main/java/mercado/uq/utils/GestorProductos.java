@@ -4,6 +4,8 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+
+import mercado.uq.model.Categoria;
 import mercado.uq.model.Producto;
 
     public class GestorProductos {
@@ -23,7 +25,7 @@ import mercado.uq.model.Producto;
                     String[] campos = linea.split(",");
                     // Crear un nuevo objeto Producto con los campos y agregarlo a la lista de productos
                     Producto producto = new Producto();
-                    producto.setCategoria(campos[0]);
+//                    producto.setCategoria(new Categoria());
                     producto.setValor(Double.parseDouble(campos[1]));
                     producto.setExistencias(Integer.parseInt(campos[2]));
                     producto.setPeso(Double.parseDouble(campos[3]));

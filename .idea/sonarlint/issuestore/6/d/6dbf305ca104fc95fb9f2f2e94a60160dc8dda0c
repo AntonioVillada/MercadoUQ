@@ -1,0 +1,12 @@
+
+W
+java:S1141I"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8Ğ½‚î1
+8
+java:S3626b"Remove this redundant jump.(’¡¿8…Ñ½‚î1
+i
+java:S2677D"LUse or store the value returned from "readLine" instead of throwing it away.(™¸¡8ˆÑ½‚î1
+G	java:S106a"+Replace this use of System.err by a logger.(°˜Ó®8‹Ñ½‚î1
+t
+java:S3776m"RRefactor this method to reduce its Cognitive Complexity from 19 to the 15 allowed.(·òşÿÿÿÿ8ŒÑ½‚î1
+T
+java:S10685"2Remove this unused "gestorFacturas" private field.(ğü°øÿÿÿÿ8“Ñ½‚î1

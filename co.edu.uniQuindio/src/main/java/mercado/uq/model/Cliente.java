@@ -1,18 +1,30 @@
 package mercado.uq.model;
+
+import java.util.List;
+
 public class Cliente {
 
+    private int idCliente;
     private String nombre;
     private String apellido;
     private String correo;
     private String telefono;
     private boolean registrado;
 
-    public Cliente(String nombre, String apellido, String correo, String telefono, boolean registrado) {
+    public Cliente(int idCliente, String nombre, String apellido, String correo, String telefono, boolean registrado) {
+        this.idCliente = idCliente;
         this.nombre = nombre;
         this.apellido = apellido;
         this.correo = correo;
         this.telefono = telefono;
         this.registrado = registrado;
+    }
+
+    public Cliente() {
+    }
+
+    public boolean isRegistrado() {
+        return registrado;
     }
 
     public String getNombre() {
@@ -47,6 +59,14 @@ public class Cliente {
         this.telefono = telefono;
     }
 
+    public int getIdCliente() {
+        return idCliente;
+    }
+
+    public void setIdCliente(int idCliente) {
+        this.idCliente = idCliente;
+    }
+
     public boolean getRegistrado() {
         return registrado;
     }
@@ -62,4 +82,26 @@ public class Cliente {
                 ", telefono='" + telefono + '\'' +
                 '}';
     }
+
+    public static Cliente buscarClientePorId(int id) {
+        GestorClientes gestorClientes = new GestorClientes(); // Crear una instancia de GestorClientes
+        // Supongamos que tienes una lista estática de clientes en alguna clase de gestión
+        System.out.println("EL ID ES: " + id);
+
+        List<Cliente> clientes = gestorClientes.getClientes(); // Obtenemos la lista de clientes
+        System.out.println("LA LISTA ES: " + clientes);
+
+        for (Cliente cliente : clientes) {
+            System.out.println("Entro al for: " + cliente);
+
+            if (cliente.getIdCliente() == id) {
+                System.out.println("EL PRODUCTO ENCONTRADO ES: " + cliente.getIdCliente());
+
+                return cliente;
+            }
+        }
+        return null; // Si no se encuentra el cliente con el ID especificado
+    }
 }
+
+
