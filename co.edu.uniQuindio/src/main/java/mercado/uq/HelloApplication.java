@@ -19,9 +19,8 @@ public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
 
-        List<Categoria> categorias = DatosIniciales.crearCategorias();
-        List<Cliente> clientes = DatosIniciales.crearClientes();
-        List<Producto> productos = DatosIniciales.crearProductos(categorias);
+        DatosIniciales newData = new DatosIniciales();
+        newData.inicializarDatos();
 
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("CargarFacturasView.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 640, 480);

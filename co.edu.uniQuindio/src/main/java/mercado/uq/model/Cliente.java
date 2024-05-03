@@ -70,6 +70,7 @@ public class Cliente {
     public boolean getRegistrado() {
         return registrado;
     }
+
     public void setRegistrado(boolean registrado) {
         this.registrado = registrado;
     }
@@ -81,26 +82,6 @@ public class Cliente {
                 ", correo='" + correo + '\'' +
                 ", telefono='" + telefono + '\'' +
                 '}';
-    }
-
-    public static Cliente buscarClientePorId(int id) {
-        GestorClientes gestorClientes = new GestorClientes(); // Crear una instancia de GestorClientes
-        // Supongamos que tienes una lista estática de clientes en alguna clase de gestión
-        System.out.println("EL ID ES: " + id);
-
-        List<Cliente> clientes = gestorClientes.getClientes(); // Obtenemos la lista de clientes
-        System.out.println("LA LISTA ES: " + clientes);
-
-        for (Cliente cliente : clientes) {
-            System.out.println("Entro al for: " + cliente);
-
-            if (cliente.getIdCliente() == id) {
-                System.out.println("EL PRODUCTO ENCONTRADO ES: " + cliente.getIdCliente());
-
-                return cliente;
-            }
-        }
-        return null; // Si no se encuentra el cliente con el ID especificado
     }
 }
 

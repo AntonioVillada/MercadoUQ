@@ -1,13 +1,42 @@
 package mercado.uq.utils;
 
-import mercado.uq.model.Categoria;
-import mercado.uq.model.Cliente;
-import mercado.uq.model.Producto;
+import mercado.uq.model.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
+//Clase donde creo DATOS QUEMADOS. Para tener clientes, productos y categorias en sus GESTORES.
 public class DatosIniciales {
+
+    public void inicializarDatos() {
+        List<Categoria> categorias = crearCategorias();
+        List<Cliente> clientes = crearClientes();
+        List<Producto> productos = crearProductos(categorias);
+
+        // Añadiendo categorías al gestor
+        GestorCategoria gestorCategoria = GestorCategoria.getInstance();
+        for (Categoria categoria : categorias) {
+            gestorCategoria.agregarCategoria(categoria);
+        }
+
+        System.out.println("Se crearon correctamente las categorias.");
+
+        // Añadiendo clientes al gestor
+        GestorClientes gestorClientes = GestorClientes.getInstance();
+        for (Cliente cliente : clientes) {
+            gestorClientes.agregarCliente(cliente);
+        }
+
+        System.out.println("Se crearon correctamente los clientes.");
+
+        // Añadiendo productos al gestor
+        GestorProducto gestorProducto = GestorProducto.getInstance();
+        for (Producto producto : productos) {
+            gestorProducto.agregarProducto(producto);
+        }
+
+        System.out.println("Se crearon correctamente los productos.");
+    }
 
     public static List<Categoria> crearCategorias() {
         List<Categoria> categorias = new ArrayList<>();
@@ -15,7 +44,6 @@ public class DatosIniciales {
         categorias.add(new Categoria(2, "TECNOLOGÍA"));
         categorias.add(new Categoria(3, "ELECTRODOMÉSTICOS"));
         categorias.add(new Categoria(4, "COSMÉTICOS"));
-        System.out.println(categorias);
         return categorias;
     }
 
@@ -26,7 +54,6 @@ public class DatosIniciales {
         clientes.add(new Cliente(3, "Pedro", "Gómez", "pedro@example.com", "456123789", true));
         clientes.add(new Cliente(4, "Ana", "Martínez", "ana@example.com", "789123456", false));
         clientes.add(new Cliente(5, "Sofía", "López", "sofia@example.com", "321654987", true));
-        System.out.println(clientes);
         return clientes;
     }
 
@@ -42,7 +69,6 @@ public class DatosIniciales {
         productos.add(new Producto(8, categorias.get(3), 15.00, 200, 0.1, "Pequeño", "Crema facial", "Crema hidratante con SPF 30"));
         productos.add(new Producto(9, categorias.get(3), 20.00, 150, 0.1, "Pequeño", "Maquillaje", "Base de maquillaje de larga duración"));
         productos.add(new Producto(10, categorias.get(3), 30.00, 100, 0.2, "Pequeño", "Perfume", "Fragancia floral con notas de jazmín"));
-        System.out.println(productos);
         return productos;
     }
 }

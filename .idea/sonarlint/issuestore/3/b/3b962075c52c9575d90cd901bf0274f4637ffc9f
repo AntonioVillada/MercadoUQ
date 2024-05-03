@@ -1,7 +1,8 @@
 
-f	java:S106"+Replace this use of System.out by a logger.(ÿ­Ë°J$4cdf8676-9f26-474c-a120-3b9ef8edb4a9
-k	java:S106"+Replace this use of System.out by a logger.(Éƒ…ÓûÿÿÿÿJ$7eabd312-ca65-4e7a-87e4-e2e014d7b29b
-k	java:S106"+Replace this use of System.out by a logger.(¡¢ŒóùÿÿÿÿJ$3ebe28e7-7d58-4569-ad2a-7556b93c6326
-k	java:S106"+Replace this use of System.out by a logger.(ØÙß«şÿÿÿÿJ$d912821a-c854-4dd4-95dc-610adb2fe80f
-f	java:S106"+Replace this use of System.out by a logger.(³©Ê J$4604825c-0f53-45a2-879e-8a7d7b18e1f9
-k	java:S106&"+Replace this use of System.out by a logger.(Ø²šùÿÿÿÿJ$9064e4bf-5909-4b33-9440-7141c781dafe
+ƒ	java:S125!"<This block of commented-out lines of code should be removed.(òñşøÿÿÿÿ8¦Á­ñğ1J$fdd8d8ab-57d9-4640-a425-db0581477bbc
+w
+java:S1128"/Remove this unused import 'java.io.FileWriter'.(Ã‘ÅÃıÿÿÿÿ8ãˆÊñğ1J$df89bc4c-d18e-489c-ac79-cb78b32a67fb
+x
+java:S1128"0Remove this unused import 'java.io.IOException'.(ªº»Úıÿÿÿÿ8äˆÊñğ1J$41fd9037-5cc8-469a-ba28-e5c743977910
+s
+java:S1128"0Remove this unused import 'java.io.PrintWriter'.(ÓŞÏÛ8äˆÊñğ1J$5b62a56c-9203-4482-be16-d0730337a311

@@ -102,4 +102,6 @@ public class Factura {
     public void setFechaDeCompra(Date fechaDeCompra) {
         this.fechaDeCompra = fechaDeCompra;
     }
+
+
 }

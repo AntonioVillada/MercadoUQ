@@ -1,12 +1,12 @@
 
-W
-java:S1141I"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8Ğ½‚î1
-8
-java:S3626b"Remove this redundant jump.(’¡¿8…Ñ½‚î1
-i
-java:S2677D"LUse or store the value returned from "readLine" instead of throwing it away.(™¸¡8ˆÑ½‚î1
-G	java:S106a"+Replace this use of System.err by a logger.(°˜Ó®8‹Ñ½‚î1
-t
-java:S3776m"RRefactor this method to reduce its Cognitive Complexity from 19 to the 15 allowed.(·òşÿÿÿÿ8ŒÑ½‚î1
-T
-java:S10685"2Remove this unused "gestorFacturas" private field.(ğü°øÿÿÿÿ8“Ñ½‚î1
+}
+java:S1141C"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8áÁà‹ó1J$6283a39e-184a-45b5-95ef-61971b7296c9
+ƒ	java:S125!"<This block of commented-out lines of code should be removed.(ƒÏÔ¢ùÿÿÿÿ8â©ğ‹ó1J$a30b412e-e839-4fea-9231-c975a08ddeb7
+^
+java:S3626Z"Remove this redundant jump.(’¡¿8ôÂà‹ó1J$cc73dfef-b945-46a6-a65d-aa4f68ae0312
+
+java:S2677>"LUse or store the value returned from "readLine" instead of throwing it away.(™¸¡8ôÂà‹ó1J$0158b1f3-c9fa-4d37-bdc0-950e4fc1c519
+r	java:S106D"+Replace this use of System.out by a logger.(í›ôğşÿÿÿÿ8ôÂà‹ó1J$d28f94cf-664d-4e54-865c-b0f57b7bac6a
+m	java:S106Y"+Replace this use of System.err by a logger.(»¹°²8ôÂà‹ó1J$063659b7-5225-4a96-b4c1-40c21da0f17d
+z
+java:S1068/"2Remove this unused "gestorFacturas" private field.(ğü°øÿÿÿÿ8ƒÃà‹ó1J$7a9c1a9c-c4f9-4a7e-99f7-7ec0f67f430e

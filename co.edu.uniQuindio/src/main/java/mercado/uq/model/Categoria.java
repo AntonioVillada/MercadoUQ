@@ -30,15 +30,4 @@ public class Categoria {
     public void setNombreCategoria(String nombreCategoria) {
         this.nombreCategoria = nombreCategoria;
     }
-
-    public static Categoria buscarCategoriaPorId(int id) {
-        // Supongamos que tienes una lista estática de categorías en alguna clase de gestión
-        List<Categoria> categorias = GestorCategoria.getCategorias(); // Obtenemos la lista de categorías
-        for (Categoria categoria : categorias) {
-            if (categoria.getIdCategoria() == id) {
-                return categoria;
-            }
-        }
-        return null; // Si no se encuentra la categoría con el ID especificado
-    }
 }

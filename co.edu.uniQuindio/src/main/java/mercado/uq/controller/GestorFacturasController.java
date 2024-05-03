@@ -7,10 +7,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import mercado.uq.facturacion.GestorFacturas;
-import mercado.uq.model.Categoria;
-import mercado.uq.model.Cliente;
-import mercado.uq.model.Factura;
-import mercado.uq.model.Producto;
+import mercado.uq.model.*;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -21,14 +18,9 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import static mercado.uq.model.Categoria.buscarCategoriaPorId;
-import static mercado.uq.model.Cliente.buscarClientePorId;
-import static mercado.uq.model.Producto.buscarProductoPorId;
-
 public class GestorFacturasController {
     @FXML
     private Button btnCargarFacturas;
-
     @FXML
     private TableView<Factura> listaFacturas;
     @FXML
@@ -37,14 +29,16 @@ public class GestorFacturasController {
     private TableColumn<Factura, Double> valorTotalColumna;
     @FXML
     private TableColumn<Factura, Date> fechaEmisionColumna;
+    //@FXML
+    //private TableColumn<Factura, List<Producto>> productosColumna;
     @FXML
-    private TableColumn<Factura, List<Producto>> productosColumna;
+    private TableColumn<Factura, Producto> productosColumna;
     @FXML
     private TableColumn<Factura, Cliente> clienteColumna;
     @FXML
     private TableColumn<Factura, String> paisEntregaColumna;
     @FXML
-    private TableColumn<Factura, String> categoriasProductosColumna;
+    private TableColumn<Factura, Categoria> categoriasProductosColumna;
     @FXML
     private TableColumn<Factura, Boolean> descuentoAplicadoColum;
     @FXML
@@ -71,6 +65,7 @@ public class GestorFacturasController {
             String linea;
             while ((linea = br.readLine()) != null) {
                 try {
+                    System.out.println("ESTA ES LA LINEA: " + linea);
                     String[] partes = linea.split(",");
                     int idFactura = Integer.parseInt(partes[0]);
                     int idProducto = Integer.parseInt(partes[1]);
@@ -82,19 +77,16 @@ public class GestorFacturasController {
                     Date fechaEmision = new SimpleDateFormat("dd/MM/yyyy").parse(partes[7]);
                     Date fechaCompra = new SimpleDateFormat("dd/MM/yyyy").parse(partes[8]);
 
-                    // Buscar el producto, categoría y cliente en el sistema
-                    Producto producto = buscarProductoPorId(idProducto);
-                    Categoria categoria = buscarCategoriaPorId(idCategoria);
-                    Cliente cliente = buscarClientePorId(idCliente);
+                    Producto producto = GestorProducto.getInstance().buscarProductoPorId(idProducto);
+                    Cliente cliente = GestorClientes.getInstance().buscarClientePorId(idCliente);
+                    Categoria categoria = GestorCategoria.getInstance().buscarCategoriaPorId(idCategoria);
 
-                    // Crear la factura con los datos obtenidos
                     Factura factura = new Factura(idFactura, categoria, producto, cliente, paisEntrega, descuentoAplicado, valorTotal, fechaEmision, fechaCompra);
 
                     // Agregar la factura a la lista
                     facturas.add(factura);
                 } catch (NumberFormatException | ParseException | IndexOutOfBoundsException e) {
-                    // Manejar el caso en el que alguna parte del archivo esté vacía o no sea válida
-                    System.err.println("Error al procesar una línea del archivo CSV: " + e.getMessage());
+                    System.err.println("Error al procesar una línea del archivo CSV: " + e);
                     continue; // Saltar a la siguiente línea
                 }
             }
@@ -115,17 +107,12 @@ public class GestorFacturasController {
         productosColumna.setCellValueFactory(new PropertyValueFactory<>("productos"));
         productosColumna.setCellFactory(tc -> new TableCell<>() {
             @Override
-            protected void updateItem(List<Producto> productos, boolean empty) {
+            protected void updateItem(Producto productos, boolean empty) {
                 super.updateItem(productos, empty);
-                if (empty || productos == null || productos.isEmpty()) {
+                if (empty || productos == null) {
                     setText(null);
                 } else {
-                    StringBuilder sb = new StringBuilder();
-                    for (Producto producto : productos) {
-                        sb.append(producto.getNombre()).append(", ");
-                    }
-                    // Eliminar la coma y el espacio final
-                    setText(sb.delete(sb.length() - 2, sb.length()).toString());
+                    setText(productos.getNombre());
                 }
             }
         });
@@ -147,15 +134,16 @@ public class GestorFacturasController {
         paisEntregaColumna.setCellValueFactory(new PropertyValueFactory<>("paisDeEntrega"));
 
         // Configuramos la celda de categorías para mostrar la lista de nombres de categorías
-        categoriasProductosColumna.setCellValueFactory(new PropertyValueFactory<>("categoriasDeProductos"));
-        categoriasProductosColumna.setCellFactory(tc -> new TableCell<Factura, String>() {
+        categoriasProductosColumna.setCellValueFactory(new PropertyValueFactory<>("categoria"));  // Asegúrate de que la Factura tiene un método getCategoria().
+
+        categoriasProductosColumna.setCellFactory(column -> new TableCell<Factura, Categoria>() {
             @Override
-            protected void updateItem(String categorias, boolean empty) {
-                super.updateItem(categorias, empty);
-                if (empty || categorias == null || categorias.isEmpty()) {
+            protected void updateItem(Categoria categoria, boolean empty) {
+                super.updateItem(categoria, empty);  // Llamada al método de la clase base
+                if (empty || categoria == null) {
                     setText(null);
                 } else {
-                    setText(categorias);
+                    setText(categoria.getNombreCategoria());  // Asumiendo que Categoria tiene un método getNombre()
                 }
             }
         });

@@ -31,3 +31,7 @@ t
 Dco.edu.uniQuindio/src/main/java/mercado/uq/model/GestorProducto.java,3\1\31d5f4e33b4ba3681ce299ae19c6526c31f1960f
 t
 Dco.edu.uniQuindio/src/main/java/mercado/uq/utils/DatosIniciales.java,5\f\5f53e5a12c596cddae8fdb8d2f3114cf36962cdf
+o
+?co.edu.uniQuindio/src/main/java/mercado/uq/utils/Singleton.java,b\6\b66d975137beb1f575d2bb4cf11089070b3b6a07
+z
+Jco.edu.uniQuindio/src/main/java/mercado/uq/facturacion/GestorFacturas.java,c\6\c65556fc01aa05bdb8383a43c748a0c374b39372

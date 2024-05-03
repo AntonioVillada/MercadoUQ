@@ -1,9 +1,8 @@
 
 Œ
-java:S1192#"IDefine a constant instead of duplicating this literal "PequeÃ±o" 9 times.(´‘¬„8å¢ç€î1J$88c0f456-6766-47bc-9e33-a164b4616e3f
-}
-java:S1118
-":Add a private constructor to hide the implicit public one.(ºÈÎ»8ìãâ€î1J$9474b4f4-bce2-40a7-90e7-03e63ba6b3fa
-r	java:S106"+Replace this use of System.out by a logger.(´¹Õ×ıÿÿÿÿ8¦Ô—î1J$5b7fba1f-e224-4900-bfe1-ad10e892ae05
-m	java:S106"+Replace this use of System.out by a logger.(¶¾Á­8¥ø—î1J$cb98fa35-ca65-46bd-aca5-27986bc78939
-G	java:S106-"+Replace this use of System.out by a logger.(¶Ö²¯8åÑ˜î1
+java:S1192>"IDefine a constant instead of duplicating this literal "PequeÃ±o" 9 times.(´‘¬„8Âõñğ1J$28acf710-45fd-41a4-8e1b-125944a17a94
+x
+java:S2209"5Change this instance-reference to a static reference.(©²¥›8°ûúñğ1J$39ded5ac-20c9-440d-a1ba-daa3693b6ef2
+m	java:S106"+Replace this use of System.out by a logger.(ğ¦×˜8ó‡ÿñğ1J$45f068d1-4f82-4380-af04-fb8573aa88b8
+r	java:S106"+Replace this use of System.out by a logger.(Øâ†Üşÿÿÿÿ8§ó€òğ1J$f75e0172-5ba1-45df-ae56-374dc1e3aebc
+m	java:S106&"+Replace this use of System.out by a logger.(—ƒì¾8¨ó€òğ1J$7b3f645e-ca15-4e08-836b-38ada8bc210b

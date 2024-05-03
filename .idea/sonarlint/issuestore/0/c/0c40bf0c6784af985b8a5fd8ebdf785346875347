@@ -1,7 +1,5 @@
 
-¤
-java:S4144F"\Update this method so that its implementation is not identical to "isRegistrado" on line 26.(Ü’±ıÿÿÿÿ8¼şÈî1J$8d62cd67-3ed1-4c40-9dfe-aea072a56e58
-L	java:S106Y"+Replace this use of System.out by a logger.(É×‰äşÿÿÿÿ8¥ıäî1
-L	java:S106\"+Replace this use of System.out by a logger.(·ÆÉÀÿÿÿÿÿ8¥ıäî1
-G	java:S106_"+Replace this use of System.out by a logger.(ö¹àÌ8¦ıäî1
-L	java:S106b"+Replace this use of System.out by a logger.(Å÷“éşÿÿÿÿ8¦ıäî1
+~
+java:S4144F"\Update this method so that its implementation is not identical to "isRegistrado" on line 26.(Ü’±ıÿÿÿÿ8Ï¤Ëñğ1
+s
+java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8æúÄñğ1J$6aa4a75f-fdc7-43c0-80e0-54a7664fd188

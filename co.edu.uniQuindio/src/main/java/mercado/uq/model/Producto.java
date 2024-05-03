@@ -91,15 +91,4 @@ public class Producto {
     public void setIdProducto(int idProducto) {
         this.idProducto = idProducto;
     }
-
-    public static Producto buscarProductoPorId(int id) {
-        // Supongamos que tienes una lista estática de productos en alguna clase de gestión
-        List<Producto> productos = GestorProducto.getProductos(); // Obtenemos la lista de productos
-        for (Producto producto : productos) {
-            if (producto.getIdProducto() == id) {
-                return producto;
-            }
-        }
-        return null; // Si no se encuentra el producto con el ID especificado
-    }
 }

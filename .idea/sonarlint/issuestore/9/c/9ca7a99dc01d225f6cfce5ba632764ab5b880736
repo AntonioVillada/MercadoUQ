@@ -1,9 +1,10 @@
 
-€
-java:S1854"=Remove this useless assignment to local variable "productos".(ÄÎÁ„8üˆó€î1J$fe61e0d9-cf48-4143-aeb3-8c0b9a0d9f0d
-„
-java:S1854"<Remove this useless assignment to local variable "clientes".(³¿ó¦ûÿÿÿÿ8üˆó€î1J$a733a5b9-cbf6-4d6b-b89b-c35cbdc7e226
-u
-java:S1481"-Remove this unused "clientes" local variable.(³¿ó¦ûÿÿÿÿ8þˆó€î1J$e9f7e512-8c36-4c47-987b-ef76dc58e955
-q
-java:S1481".Remove this unused "productos" local variable.(ÄÎÁ„8þˆó€î1J$0470404f-a0bc-4fe9-949f-049a39fb0cce
+T
+java:S1128"7Remove this unused import 'mercado.uq.model.Categoria'.(Ú®¾™8¢ìÜêò1
+R
+java:S1128	"5Remove this unused import 'mercado.uq.model.Cliente'.(„¨¼—8¢ìÜêò1
+X
+java:S1128
+"6Remove this unused import 'mercado.uq.model.Producto'.(ø÷¡áüÿÿÿÿ8¢ìÜêò1
+M
+java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8£ìÜêò1
