@@ -22,9 +22,9 @@ public class HelloApplication extends Application {
         DatosIniciales newData = new DatosIniciales();
         newData.inicializarDatos();
 
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("CargarFacturasView.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("PanelPrincipal.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 640, 480);
-        stage.setTitle("Hello!");
+        stage.setTitle("Panel Principal!");
         stage.setScene(scene);
         stage.show();
     }
