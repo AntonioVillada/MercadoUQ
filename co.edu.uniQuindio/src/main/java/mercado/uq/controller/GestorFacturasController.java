@@ -14,7 +14,6 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -22,21 +21,19 @@ public class GestorFacturasController {
     @FXML
     private Button btnCargarFacturas;
     @FXML
-    private TableView<Factura> listaFacturas;
+    public TableView<Factura> listaFacturas;
     @FXML
     private TableColumn<Factura, Integer> numeroFacturaColumna;
     @FXML
     private TableColumn<Factura, Double> valorTotalColumna;
     @FXML
     private TableColumn<Factura, Date> fechaEmisionColumna;
-    //@FXML
-    //private TableColumn<Factura, List<Producto>> productosColumna;
     @FXML
     private TableColumn<Factura, Producto> productosColumna;
     @FXML
     private TableColumn<Factura, Cliente> clienteColumna;
     @FXML
-    private TableColumn<Factura, String> paisEntregaColumna;
+    private TableColumn<Factura, Pais> paisEntregaColumna;
     @FXML
     private TableColumn<Factura, Categoria> categoriasProductosColumna;
     @FXML
@@ -44,18 +41,22 @@ public class GestorFacturasController {
     @FXML
     private TableColumn<Factura, Date> fechaCompraColumna;
 
-    private GestorFacturas gestorFacturas = new GestorFacturas();
+    private GestorFacturas gestorFacturas = GestorFacturas.getInstance();
+    private GestorPais gestorPaises = GestorPais.getInstance();
+    private FacturaScheduler scheduler;
 
     @FXML
     private void onCargarFacturasButtonClick() {
-        List<Factura> facturas = cargarFacturasCSV("C:\\Proyecto\\txt\\facturas.txt");
-        listaFacturas.getItems().addAll(facturas);
+        System.out.println("Button clicked. Loading new invoices...");
+        List<Factura> nuevasFacturas = scheduler.getNuevasFacturas();
+        System.out.println("New invoices to add: " + nuevasFacturas.size());
+        listaFacturas.getItems().clear();
+        listaFacturas.getItems().addAll(nuevasFacturas);
+        System.out.println("Cantidad nueva de facturas es: " + gestorFacturas.cantidadFacturas());
     }
 
-    private List<Factura> cargarFacturasCSV(String rutaArchivo) {
-
-        List<Factura> facturas = new ArrayList<>();
-
+    public List<Factura> cargarFacturasCSV(String rutaArchivo) {
+        System.out.println("Cargando archivo CSV: " + rutaArchivo);
         // Leer el archivo CSV y procesar cada línea
         try (BufferedReader br = new BufferedReader(new FileReader(rutaArchivo))) {
             // Leer y descartar la primera línea si contiene encabezados de columna
@@ -65,13 +66,12 @@ public class GestorFacturasController {
             String linea;
             while ((linea = br.readLine()) != null) {
                 try {
-                    System.out.println("ESTA ES LA LINEA: " + linea);
                     String[] partes = linea.split(",");
                     int idFactura = Integer.parseInt(partes[0]);
                     int idProducto = Integer.parseInt(partes[1]);
                     int idCategoria = Integer.parseInt(partes[2]);
                     int idCliente = Integer.parseInt(partes[3]);
-                    String paisEntrega = partes[4];
+                    Pais pais = gestorPaises.buscarPaisNombre(partes[4]);
                     boolean descuentoAplicado = Boolean.parseBoolean(partes[5]);
                     double valorTotal = Double.parseDouble(partes[6]);
                     Date fechaEmision = new SimpleDateFormat("dd/MM/yyyy").parse(partes[7]);
@@ -81,10 +81,12 @@ public class GestorFacturasController {
                     Cliente cliente = GestorClientes.getInstance().buscarClientePorId(idCliente);
                     Categoria categoria = GestorCategoria.getInstance().buscarCategoriaPorId(idCategoria);
 
-                    Factura factura = new Factura(idFactura, categoria, producto, cliente, paisEntrega, descuentoAplicado, valorTotal, fechaEmision, fechaCompra);
+                    boolean facturaExiste = gestorFacturas.existeFactura(idFactura);
+                    if(!facturaExiste){
+                        Factura factura = new Factura(idFactura, categoria, producto, cliente, pais, descuentoAplicado, fechaCompra, fechaEmision, valorTotal);
+                        gestorFacturas.agregarFactura(factura);
+                    }
 
-                    // Agregar la factura a la lista
-                    facturas.add(factura);
                 } catch (NumberFormatException | ParseException | IndexOutOfBoundsException e) {
                     System.err.println("Error al procesar una línea del archivo CSV: " + e);
                     continue; // Saltar a la siguiente línea
@@ -94,7 +96,7 @@ public class GestorFacturasController {
             e.printStackTrace();
         }
 
-        return facturas;
+        return gestorFacturas.getListaFacturas();
     }
 
     @FXML
@@ -131,7 +133,18 @@ public class GestorFacturasController {
             }
         });
 
-        paisEntregaColumna.setCellValueFactory(new PropertyValueFactory<>("paisDeEntrega"));
+        paisEntregaColumna.setCellValueFactory(new PropertyValueFactory<>("paisEntrega"));
+        paisEntregaColumna.setCellFactory(tc -> new TableCell<Factura, Pais>() {
+            @Override
+            protected void updateItem(Pais pais, boolean empty) {
+                super.updateItem(pais, empty);
+                if (empty || pais == null) {
+                    setText(null);
+                } else {
+                    setText(pais.getNombrePais());
+                }
+            }
+        });
 
         // Configuramos la celda de categorías para mostrar la lista de nombres de categorías
         categoriasProductosColumna.setCellValueFactory(new PropertyValueFactory<>("categoria"));  // Asegúrate de que la Factura tiene un método getCategoria().
@@ -150,5 +163,9 @@ public class GestorFacturasController {
 
         descuentoAplicadoColum.setCellValueFactory(new PropertyValueFactory<>("descuentoAplicado"));
         fechaCompraColumna.setCellValueFactory(new PropertyValueFactory<>("fechaDeCompra"));
+
+        // Iniciar el FacturaScheduler
+        scheduler = new FacturaScheduler(this);
+        scheduler.start();
     }
 }

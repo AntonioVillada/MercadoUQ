@@ -35,3 +35,11 @@ o
 ?co.edu.uniQuindio/src/main/java/mercado/uq/utils/Singleton.java,b\6\b66d975137beb1f575d2bb4cf11089070b3b6a07
 z
 Jco.edu.uniQuindio/src/main/java/mercado/uq/facturacion/GestorFacturas.java,c\6\c65556fc01aa05bdb8383a43c748a0c374b39372
+p
+@co.edu.uniQuindio/src/main/java/mercado/uq/model/GestorPais.java,e\a\ea4b7788491259ae2f49e857288f1b90f98c74ab
+~
+Nco.edu.uniQuindio/src/main/java/mercado/uq/facturacion/AnalizadorFacturas.java,a\b\abdfe105d6d121ff9d3be07b16f21ce9a7b149b7
+|
+Lco.edu.uniQuindio/src/main/java/mercado/uq/facturacion/GeneradorPremios.java,1\9\1934471806c8bb5639c05a2c1f72428ffb62f195
+{
+Kco.edu.uniQuindio/src/main/java/mercado/uq/controller/FacturaScheduler.java,2\2\2241d2f4a481484a5f3489678080f858430483f8

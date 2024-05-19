@@ -6,12 +6,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 //Clase donde creo DATOS QUEMADOS. Para tener clientes, productos y categorias en sus GESTORES.
+//En esta clase cargamos inicialmente la info de los clientes registrados, los paises y la informacion de los productos con sus categorias.
 public class DatosIniciales {
 
     public void inicializarDatos() {
         List<Categoria> categorias = crearCategorias();
         List<Cliente> clientes = crearClientes();
         List<Producto> productos = crearProductos(categorias);
+        List<Pais> paises = crearPaises();
+
+        // Añadiendo paises al gestor
+        GestorPais gestorPaises = GestorPais.getInstance();
+        for (Pais pais : paises) {
+            gestorPaises.agregarPais(pais);
+        }
+
+        System.out.println("Se crearon correctamente los paises.");
 
         // Añadiendo categorías al gestor
         GestorCategoria gestorCategoria = GestorCategoria.getInstance();
@@ -38,12 +48,22 @@ public class DatosIniciales {
         System.out.println("Se crearon correctamente los productos.");
     }
 
+    private List<Pais> crearPaises() {
+        List<Pais> paises = new ArrayList<>();
+        paises.add(new Pais(1, "Colombia"));
+        paises.add(new Pais(2, "Argentina"));
+        paises.add(new Pais(3, "Espania"));
+        paises.add(new Pais(4, "Uruguay"));
+        paises.add(new Pais(5, "Chile"));
+        return paises;
+    }
+
     public static List<Categoria> crearCategorias() {
         List<Categoria> categorias = new ArrayList<>();
-        categorias.add(new Categoria(1, "ALIMENTOS"));
-        categorias.add(new Categoria(2, "TECNOLOGÍA"));
-        categorias.add(new Categoria(3, "ELECTRODOMÉSTICOS"));
-        categorias.add(new Categoria(4, "COSMÉTICOS"));
+        categorias.add(new Categoria(4, "Alimentos"));
+        categorias.add(new Categoria(3, "Tecnologia"));
+        categorias.add(new Categoria(2, "Electrodomesticos."));
+        categorias.add(new Categoria(1, "Cosmeticos"));
         return categorias;
     }
 

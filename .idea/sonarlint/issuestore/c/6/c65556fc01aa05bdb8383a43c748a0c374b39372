@@ -1,4 +1,18 @@
 
-E	java:S106$"+Replace this use of System.out by a logger.(Œ›ÿÿÿÿÿ
-@	java:S106&"+Replace this use of System.out by a logger.(Î¼áº
-E	java:S1063"+Replace this use of System.out by a logger.(—šˆøÿÿÿÿ
+z
+java:S1128"7Remove this unused import 'mercado.uq.model.Categoria'.(Ú®¾™8Ì²ó÷ø1J$73f8a8fb-0880-4894-ae2f-78810d0357cb
+€
+java:S1128"=Remove this unused import 'mercado.uq.model.GestorCategoria'.(Ç„å²8Í²ó÷ø1J$52cd5ce1-bdbd-47b4-8839-c26ffd212ece
+l
+java:S1128")Remove this unused import 'java.io.File'.(†Ğ¥Å8Í²ó÷ø1J$2eeed150-4819-46e8-83d3-29500620d306
+‚
+java:S1128":Remove this unused import 'java.io.FileNotFoundException'.(·î™ùÿÿÿÿ8Í²ó÷ø1J$4a9d36b4-add6-4863-a5c2-f65b70f427b0
+x
+java:S1128	"5Remove this unused import 'java.text.ParseException'.(ñ®ï•8Í²ó÷ø1J$f44976f2-9c79-48da-87b2-d4d03793cb1a
+z
+java:S1128
+"7Remove this unused import 'java.text.SimpleDateFormat'.(ú¡ÙÛ8Í²ó÷ø1J$780e9e37-0a01-411d-8fa5-dc3d119be868
+n
+java:S1128"+Remove this unused import 'java.util.Date'.(¸…¼ü8Í²ó÷ø1J$a4ca2bd7-e9d8-464c-a634-fa6e01544913
+v
+java:S1128".Remove this unused import 'java.util.Scanner'.(ÒÜÅ¸úÿÿÿÿ8Í²ó÷ø1J$03593ffd-bdbf-4b12-b233-5763e5d2d61d

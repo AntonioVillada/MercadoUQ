@@ -2,12 +2,23 @@ package mercado.uq.model;
 
 public class Pais {
 
+    private int id;
     private String nombrePais;
-    private String codigo;
-    private String estado;
 
-    public Pais(String nombrePais) {
+    public Pais(int id, String nombrePais) {
+        this.id = id;
         this.nombrePais = nombrePais;
+    }
+
+    public Pais() {
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getNombrePais() {
@@ -16,22 +27,6 @@ public class Pais {
 
     public void setNombrePais(String nombrePais) {
         this.nombrePais = nombrePais;
-    }
-
-    public String getCodigo() {
-        return codigo;
-    }
-
-    public void setCodigo(String codigo) {
-        this.codigo = codigo;
-    }
-
-    public String getEstado() {
-        return estado;
-    }
-
-    public void setEstado(String estado) {
-        this.estado = estado;
     }
 }
 

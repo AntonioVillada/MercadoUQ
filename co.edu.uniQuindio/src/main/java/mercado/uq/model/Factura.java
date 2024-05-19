@@ -9,22 +9,22 @@ public class Factura {
     private Categoria categoria;
     private Producto productos;
     private Cliente cliente;
-    private String paisDeEntrega;
+    private Pais paisEntrega  ;
     private boolean descuentoAplicado;
     private double valorTotal;
     private Date fechaDeEmision;
     private Date fechaDeCompra;
 
-    public Factura(int numeroDeFactura, Categoria categoria, Producto productos, Cliente cliente, String paisDeEntrega, boolean descuentoAplicado, double valorTotal, Date fechaDeEmision, Date fechaDeCompra) {
+    public Factura(int numeroDeFactura, Categoria categoria, Producto productos, Cliente cliente, Pais paisEntrega, boolean descuentoAplicado, Date fechaDeCompra, Date fechaDeEmision, double valorTotal) {
         this.numeroDeFactura = numeroDeFactura;
         this.categoria = categoria;
         this.productos = productos;
         this.cliente = cliente;
-        this.paisDeEntrega = paisDeEntrega;
+        this.paisEntrega = paisEntrega;
         this.descuentoAplicado = descuentoAplicado;
-        this.valorTotal = valorTotal;
-        this.fechaDeEmision = fechaDeEmision;
         this.fechaDeCompra = fechaDeCompra;
+        this.fechaDeEmision = fechaDeEmision;
+        this.valorTotal = valorTotal;
     }
 
     public Factura() {
@@ -63,12 +63,12 @@ public class Factura {
         this.cliente = cliente;
     }
 
-    public String getPaisDeEntrega() {
-        return paisDeEntrega;
+    public Pais getPaisEntrega() {
+        return paisEntrega;
     }
 
-    public void setPaisDeEntrega(String paisDeEntrega) {
-        this.paisDeEntrega = paisDeEntrega;
+    public void setPaisEntrega(Pais paisEntrega) {
+        this.paisEntrega = paisEntrega;
     }
 
     public boolean isDescuentoAplicado() {

@@ -1,12 +1,14 @@
 
 }
-java:S1141C"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8áÁà‹ó1J$6283a39e-184a-45b5-95ef-61971b7296c9
-ƒ	java:S125!"<This block of commented-out lines of code should be removed.(ƒÏÔ¢ùÿÿÿÿ8â©ğ‹ó1J$a30b412e-e839-4fea-9231-c975a08ddeb7
+java:S1141D"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8Ìõô÷ø1J$aa2005a1-aa5a-4270-9047-07b62b650cfd
+r	java:S1062"+Replace this use of System.out by a logger.(¢è•äùÿÿÿÿ8×öô÷ø1J$ce9d4f57-3b93-4600-bb38-f164b88ceb46
+m	java:S1064"+Replace this use of System.out by a logger.(Ù„‡8×öô÷ø1J$5071b703-5f76-4e7c-9cd2-dbd8734de8d1
+m	java:S1067"+Replace this use of System.out by a logger.(ÃÛ‡³8Øöô÷ø1J$cadb6ff6-e705-43cd-bfd5-47f5c1e9d01e
 ^
-java:S3626Z"Remove this redundant jump.(’¡¿8ôÂà‹ó1J$cc73dfef-b945-46a6-a65d-aa4f68ae0312
+java:S3626\"Remove this redundant jump.(’¡¿8Ùöô÷ø1J$871406f2-7425-4ff9-afc2-5630b3a65c19
+m	java:S106;"+Replace this use of System.out by a logger.(ñİ¹8Úöô÷ø1J$77b22b25-604c-4ff6-b83f-63d9ea02a98f
 
-java:S2677>"LUse or store the value returned from "readLine" instead of throwing it away.(™¸¡8ôÂà‹ó1J$0158b1f3-c9fa-4d37-bdc0-950e4fc1c519
-r	java:S106D"+Replace this use of System.out by a logger.(í›ôğşÿÿÿÿ8ôÂà‹ó1J$d28f94cf-664d-4e54-865c-b0f57b7bac6a
-m	java:S106Y"+Replace this use of System.err by a logger.(»¹°²8ôÂà‹ó1J$063659b7-5225-4a96-b4c1-40c21da0f17d
-z
-java:S1068/"2Remove this unused "gestorFacturas" private field.(ğü°øÿÿÿÿ8ƒÃà‹ó1J$7a9c1a9c-c4f9-4a7e-99f7-7ec0f67f430e
+java:S2677?"LUse or store the value returned from "readLine" instead of throwing it away.(™¸¡8Üöô÷ø1J$3742bd2c-ec55-4b8d-8489-de244f028197
+m	java:S106["+Replace this use of System.err by a logger.(»¹°²8ßöô÷ø1J$02efe370-b94b-4f0b-a9a3-56f6de5be155
+š
+java:S3776g"RRefactor this method to reduce its Cognitive Complexity from 20 to the 15 allowed.(·òşÿÿÿÿ8áöô÷ø1J$9690d79e-019d-42cc-ac0b-c3adf5d9ea62

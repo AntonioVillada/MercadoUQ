@@ -1,8 +1,7 @@
 
 Œ
-java:S1192>"IDefine a constant instead of duplicating this literal "PequeÃ±o" 9 times.(´‘¬„8Âõñğ1J$28acf710-45fd-41a4-8e1b-125944a17a94
-x
-java:S2209"5Change this instance-reference to a static reference.(©²¥›8°ûúñğ1J$39ded5ac-20c9-440d-a1ba-daa3693b6ef2
-m	java:S106"+Replace this use of System.out by a logger.(ğ¦×˜8ó‡ÿñğ1J$45f068d1-4f82-4380-af04-fb8573aa88b8
-r	java:S106"+Replace this use of System.out by a logger.(Øâ†Üşÿÿÿÿ8§ó€òğ1J$f75e0172-5ba1-45df-ae56-374dc1e3aebc
-m	java:S106&"+Replace this use of System.out by a logger.(—ƒì¾8¨ó€òğ1J$7b3f645e-ca15-4e08-836b-38ada8bc210b
+java:S1192R"IDefine a constant instead of duplicating this literal "PequeÃ±o" 9 times.(´‘¬„8Âõñğ1J$469e991a-8331-42a4-bb88-90004dae4170
+r	java:S106"+Replace this use of System.out by a logger.(ûƒÜüıÿÿÿÿ8§ó€òğ1J$ea0ed5d9-d83b-43dd-82b6-a8a72a31830b
+m	java:S106 "+Replace this use of System.out by a logger.(ğ¦×˜8¨ó€òğ1J$f07ea426-e715-4f30-8127-928f678e44d2
+r	java:S106("+Replace this use of System.out by a logger.(Øâ†Üşÿÿÿÿ8ÄğÎÎø1J$ad7221f9-7c28-4844-ab70-386a90a9616b
+m	java:S1060"+Replace this use of System.out by a logger.(—ƒì¾8çßÏÏø1J$c3860c38-af6d-4d52-a92d-56e771bf0460
