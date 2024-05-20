@@ -10,11 +10,14 @@
     <children>
         <HBox prefHeight="100.0" prefWidth="200.0">
          <children>
-            <HBox prefHeight="100.0" prefWidth="200.0">
+            <HBox prefHeight="100.0" prefWidth="1036.0">
                <children>
-                  <VBox prefHeight="100.0" prefWidth="204.0">
+                  <VBox prefHeight="100.0" prefWidth="270.0">
                      <children>
-                        <VBox prefHeight="67.0" prefWidth="200.0" />
+                        <VBox prefHeight="67.0" prefWidth="200.0">
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#cargarMenu" text="Menu" />
+                           </children></VBox>
                         <Button mnemonicParsing="false" onAction="#onCargarFacturasButtonClick" text="Cargar Facturas" />
                      </children>
                   </VBox>

@@ -27,8 +27,8 @@
                               <VBox alignment="TOP_CENTER" prefHeight="299.0" prefWidth="290.0">
                                  <children>
                                     <HBox prefHeight="52.0" prefWidth="290.0" />
-                                    <Button mnemonicParsing="false" prefHeight="39.0" prefWidth="170.0" text="Generar premio" textAlignment="CENTER" />
-                                    <Button mnemonicParsing="false" prefWidth="170.0" text="Encolar premio " textAlignment="CENTER" />
+                                    <Button mnemonicParsing="false" onAction="#Generarpremio" prefHeight="39.0" prefWidth="170.0" text="Generar premio" textAlignment="CENTER" />
+                                    <Button mnemonicParsing="false" onAction="#EncolarPremio" prefWidth="170.0" text="Encolar premio " textAlignment="CENTER" />
                                     <Button mnemonicParsing="false" onAction="#handleCargarFactura" prefWidth="170.0" text="Cargar factura" textAlignment="CENTER" />
                                     <Button mnemonicParsing="false" prefWidth="170.0" textAlignment="CENTER" />
                                  </children>
